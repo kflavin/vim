@@ -23,17 +23,17 @@ let mapleader=','
 "nnoremap <space> dd
 "nnoremap <leader>d dd
 "nnoremap <leader><leader> <C-^>
-map <leader><leader>v <C-w>v
-map <leader><leader>s <C-w>s
-map <leader><leader>o <C-w>o
-map <leader><leader>a <C-^>
+noremap <leader><leader>v <C-w>v
+noremap <leader><leader>s <C-w>s
+noremap <leader><leader>o <C-w>o
+noremap <leader><leader>a <C-^>
 
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
-map <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
 
-map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
+noremap <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 
 "map <leader>gt :CommandTFlush<cr>\|:CommandT functional_tests/<cr>
 "map <leader>gr :CommandTFlush<cr>\|:CommandT tdd/<cr>
@@ -47,3 +47,8 @@ map <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 "map <leader>v :view %%
 
 nnoremap <leader><leader> <c-^>
+
+
+
+" trying out some new mappings
+noremap <space> viw
