@@ -52,3 +52,29 @@ nnoremap <leader><leader> <c-^>
 
 " trying out some new mappings
 noremap <space> viw
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+inoremap jk <esc>
+vnoremap jk <esc>
+
+" operator mappings
+onoremap p i(
+" onoremap b /return<cr>
+
+" remap esc to no op
+inoremap <esc> <nop>
+
+augroup filetype_python
+    autocmd!
+    autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
+augroup END
+
+
+" Vimscript file settings ---------------------- {{{
+augroup filetype_vim
+    autocmd!
+    autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
