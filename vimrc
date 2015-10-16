@@ -17,6 +17,7 @@ set foldnestmax=2
 set foldlevelstart=20
 set splitbelow
 set splitright
+set hlsearch incsearch
 
 let mapleader=','
 "nmap ZX <ESC>:w<CR>
@@ -28,10 +29,16 @@ noremap <leader><leader>s <C-w>s
 noremap <leader><leader>o <C-w>o
 noremap <leader><leader>a <C-^>
 
+" Windows
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
+
+" Tabs
+noremap <C-t> :tabnew<cr>
+noremap <C-p> :tabprev<cr>
+noremap <C-n> :tabnext<cr>
 
 noremap <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 
@@ -46,10 +53,6 @@ noremap <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 "map <leader>e :edit %%
 "map <leader>v :view %%
 
-nnoremap <leader><leader> <c-^>
-
-
-
 " trying out some new mappings
 noremap <space> viw
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -58,6 +61,8 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 inoremap jk <esc>
 vnoremap jk <esc>
+
+nnoremap <leader>g :silent execute "grep! -IR " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
 " operator mappings
 onoremap p i(
