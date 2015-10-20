@@ -62,7 +62,11 @@ nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 inoremap jk <esc>
 vnoremap jk <esc>
 
+" Grep files
 nnoremap <leader>g :silent execute "grep! -IR " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+
+" Toggle line numbers
+nnoremap <leader>N :setlocal number!<cr>
 
 " operator mappings
 onoremap p i(
