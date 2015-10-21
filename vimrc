@@ -2,7 +2,7 @@ execute pathogen#infect()
 
 " Pep8 stuff
 "autocmd FileType python map <buffer> <F3> :call Pep8()<CR> 
-let g:pep8_map='<F8>'
+let g:pep8_map='<F9>'
 
 syntax on
 filetype plugin on

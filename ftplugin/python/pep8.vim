@@ -43,14 +43,16 @@ endfunction
   if !exists('g:pep8_map')
     let g:pep8_map='<F5>'
   endif
+
 if ( !hasmapto('<SID>PEP8()') && (maparg(g:pep8_map) == '') )
   exe 'nnoremap <silent> '. g:pep8_map .' :call <SID>Pep8()<CR>'
 "  map <F5> :call <SID>Pep8()<CR>
 "  map! <F5> :call <SID>Pep8()<CR>
 else
-  if ( !has("gui_running") || has("win32") )
-    echo "Python PEP8 Error: No Key mapped.\n".
-          \ g:pep8_map ." is taken and a replacement was not assigned."
-  endif
+  " Not working properly, so I'm commenting it out.
+  "if ( !has("gui_running") || has("win32") )
+    "echo "Python PEP8 Error: No Key mapped.\n".
+          "\ g:pep8_map ." is taken and a replacement was not assigned."
+  "endif
 endif
 
