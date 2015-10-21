@@ -35,6 +35,7 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 noremap <C-x> <C-w>x
+map <C-o> <Plug>ZoomWin
 
 " Tabs
 noremap <C-t> :tabnew<cr>
