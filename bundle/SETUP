@@ -1,0 +1,4 @@
+# Once you've verified that you have ruby installed correctly, run the following
+cd ~/.vim/bundle/command-t/ruby/command-t
+ruby extconf.rb
+make
