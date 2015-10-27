@@ -1,4 +1,13 @@
+set nocompatible
+
 execute pathogen#infect()
+
+" allows incsearch highlighting for range commands
+" cnoremap $t <CR>:t''<CR>
+" cnoremap $T <CR>:T''<CR>
+" cnoremap $m <CR>:m''<CR>
+" cnoremap $M <CR>:M''<CR>
+" cnoremap $d <CR>:d<CR>``
 
 " Pep8 stuff
 "autocmd FileType python map <buffer> <F3> :call Pep8()<CR> 
@@ -7,6 +16,7 @@ let g:pep8_map='<F9>'
 syntax on
 filetype plugin on
 source ~/.vim/plugin/matchit.vim
+
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -17,7 +27,46 @@ set foldnestmax=2
 set foldlevelstart=20
 set splitbelow
 set splitright
-set hlsearch incsearch
+set incsearch hlsearch
+set autoindent
+if has('mouse')
+  set mouse=a
+endif
+set backspace=indent,eol,start
+
+" Only do this part when compiled with support for autocommands.
+if has("autocmd")
+
+  " Enable file type detection.
+  " Use the default filetype settings, so that mail gets 'tw' set to 72,
+  " 'cindent' is on in C files, etc.
+  " Also load indent files, to automatically do language-dependent indenting.
+  filetype plugin indent on
+
+  " Put these in an autocmd group, so that we can delete them easily.
+  augroup vimrcEx
+  au!
+
+  " For all text files set 'textwidth' to 78 characters.
+  autocmd FileType text setlocal textwidth=78
+
+  " When editing a file, always jump to the last known cursor position.  Don't
+  " do it when the position is invalid or when inside an event handler
+  " (happens when dropping a file on gvim).
+  " Also don't do it when the mark is in the first line, that is the default
+  " position when opening a file.
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+
+  augroup END
+
+else
+
+  set autoindent                " always set autoindenting on
+
+endif " has("autocmd")
 
 let mapleader=','
 "nmap ZX <ESC>:w<CR>
@@ -35,7 +84,7 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 noremap <C-x> <C-w>x
-map <C-o> <Plug>ZoomWin
+map <C-m> <Plug>ZoomWin
 
 " Tabs
 noremap <C-t> :tabnew<cr>
