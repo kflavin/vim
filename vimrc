@@ -21,7 +21,7 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 set nu
-set wildignore+=*.pyc
+set wildignore+=*.pyc,*.pdf
 set foldmethod=indent
 set foldnestmax=2
 set foldlevelstart=20
@@ -183,3 +183,9 @@ let g:EasyMotion_smartcase = 1
 map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
+
+" NERDTree Ignores
+let NERDTreeIgnore = ['\.pyc$',
+                       \ '\.ods$',
+                       \ '\.pdf$',
+                       \ ]
