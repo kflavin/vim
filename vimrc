@@ -9,9 +9,8 @@ execute pathogen#infect()
 " cnoremap $M <CR>:M''<CR>
 " cnoremap $d <CR>:d<CR>``
 
-" Pep8 stuff
-"autocmd FileType python map <buffer> <F3> :call Pep8()<CR> 
-let g:pep8_map='<F9>'
+" flake8 config
+let g:flake8_ignore="E501,W293"
 
 syntax on
 filetype plugin on
@@ -114,6 +113,7 @@ nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 inoremap jk <esc>
 vnoremap jk <esc>
+snoremap jk <esc>
 
 " Grep files
 nnoremap <leader>g :silent execute "grep! -IR " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
