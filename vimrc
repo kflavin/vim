@@ -28,9 +28,9 @@ set splitbelow
 set splitright
 set incsearch hlsearch
 set autoindent
-if has('mouse')
-  set mouse=a
-endif
+"if has('mouse')
+  "set mouse=a
+"endif
 set backspace=indent,eol,start
 
 " Only do this part when compiled with support for autocommands.
@@ -107,13 +107,17 @@ noremap <leader>n :NERDTreeToggle<cr>
 
 " trying out some new mappings
 noremap <space> viw
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 inoremap jk <esc>
 vnoremap jk <esc>
 snoremap jk <esc>
+
+" Quickly open files for viewing
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>op :vsplit ~/.vim/bundle/vim-snippets/snippets/python.snippets<cr>
+nnoremap <leader>oh :vsplit ~/.vim/bundle/vim-snippets/snippets/html.snippets<cr>
 
 " Grep files
 nnoremap <leader>g :silent execute "grep! -IR " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
