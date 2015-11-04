@@ -10,11 +10,11 @@ execute pathogen#infect()
 " cnoremap $d <CR>:d<CR>``
 
 " flake8 config
-let g:flake8_ignore="E501,W293"
+" let g:flake8_ignore="E501,W293"
 
 syntax on
 filetype plugin on
-source ~/.vim/plugin/matchit.vim
+"source ~/.vim/plugin/matchit.vim
 
 
 " Global settings
@@ -46,8 +46,6 @@ au BufNewFile,BufRead *.py
     \ fileformat=unix
     \ encoding=utf-8
 
-
-:
 "python with virtualenv support
 py << EOF
 import os
@@ -112,7 +110,8 @@ noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 noremap <C-h> <C-w>h
 noremap <C-x> <C-w>x
-map <C-m> <Plug>ZoomWin
+" Removing ZoomWin because it's conflicting with flake8
+" noremap <C-m> <Plug>ZoomWin
 
 " Tabs
 noremap <C-t> :tabnew<cr>
@@ -222,3 +221,7 @@ let NERDTreeIgnore = ['\.pyc$',
                        \ '\.ods$',
                        \ '\.pdf$',
                        \ ]
+
+" Flake8
+" autocmd BufWritePost *.py call Flake8()
+let g:flake8_show_in_gutter=1
