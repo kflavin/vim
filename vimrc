@@ -16,6 +16,8 @@ syntax on
 filetype plugin on
 source ~/.vim/plugin/matchit.vim
 
+
+" Global settings
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -32,6 +34,33 @@ set autoindent
   "set mouse=a
 "endif
 set backspace=indent,eol,start
+
+" Python Specific
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
+    \ encoding=utf-8
+
+
+:
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
+
+
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -109,9 +138,12 @@ noremap <leader>n :NERDTreeToggle<cr>
 noremap <space> viw
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
-inoremap jk <esc>
-vnoremap jk <esc>
-snoremap jk <esc>
+inoremap ;; <esc>
+vnoremap ;; <esc>
+snoremap ;; <esc>
+" remap esc to no op
+inoremap <esc> <nop>
+
 
 " Quickly open files for viewing
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -128,9 +160,6 @@ nnoremap <leader>N :setlocal number!<cr>
 " operator mappings
 onoremap p i(
 " onoremap b /return<cr>
-
-" remap esc to no op
-inoremap <esc> <nop>
 
 augroup filetype_python
     autocmd!
