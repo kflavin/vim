@@ -137,9 +137,9 @@ noremap <leader>n :NERDTreeToggle<cr>
 noremap <space> viw
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
-inoremap ;; <esc>
-vnoremap ;; <esc>
-snoremap ;; <esc>
+inoremap ;j <esc>
+vnoremap ;j <esc>
+snoremap ;j <esc>
 " remap esc to no op
 inoremap <esc> <nop>
 
