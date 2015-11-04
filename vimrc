@@ -57,9 +57,6 @@ if 'VIRTUAL_ENV' in os.environ:
 EOF
 
 
-let g:ycm_autoclose_preview_window_after_completion=1
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -174,6 +171,9 @@ augroup END
 " }}}
 
 
+"""""""""""""""""""""""""""""""""""""""
+" NERDTREE
+"""""""""""""""""""""""""""""""""""""""
 " NERDTress File highlighting
  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
@@ -194,6 +194,17 @@ endfunction
    call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
    call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
+" NERDTree Ignores
+let NERDTreeIgnore = ['\.pyc$',
+                       \ '\.ods$',
+                       \ '\.pdf$',
+                       \ ]
+
+
+
+"""""""""""""""""""""""""""""""""""""""
+" EasyMotion
+"""""""""""""""""""""""""""""""""""""""
 
 " Easy Motion configuration
 
@@ -216,12 +227,16 @@ map <Leader>j <Plug>(easymotion-j)
 map <Leader>k <Plug>(easymotion-k)
 
 
-" NERDTree Ignores
-let NERDTreeIgnore = ['\.pyc$',
-                       \ '\.ods$',
-                       \ '\.pdf$',
-                       \ ]
-
+"""""""""""""""""""""""""""""""""""""""
 " Flake8
+"""""""""""""""""""""""""""""""""""""""
 " autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_in_gutter=1
+
+
+"""""""""""""""""""""""""""""""""""""""
+" YCM
+"""""""""""""""""""""""""""""""""""""""
+let g:ycm_autoclose_preview_window_after_completion=1
+map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
