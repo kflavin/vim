@@ -96,8 +96,12 @@ let mapleader=','
 "nnoremap <space> dd
 "nnoremap <leader>d dd
 "nnoremap <leader><leader> <C-^>
-noremap <leader><leader>v <C-w>v
-noremap <leader><leader>s <C-w>s
+
+" Change vsplit and split to open new buffers
+"noremap <leader><leader>v <C-w>v
+noremap <leader><leader>v :vnew<cr>
+"noremap <leader><leader>s <C-w>s
+noremap <leader><leader>s :new<cr>
 noremap <leader><leader>o <C-w>o
 noremap <leader><leader>a <C-^>
 
