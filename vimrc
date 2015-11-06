@@ -232,6 +232,7 @@ map <Leader>k <Plug>(easymotion-k)
 """""""""""""""""""""""""""""""""""""""
 " autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_in_gutter=1
+autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
 
 
 """""""""""""""""""""""""""""""""""""""
@@ -239,4 +240,3 @@ let g:flake8_show_in_gutter=1
 """""""""""""""""""""""""""""""""""""""
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
