@@ -90,7 +90,8 @@ function! GetPythonIndent(lnum)
   if p > 0
     let parcol = col('.')
     if match(getline(a:lnum), '^\s*[])}]') != -1
-      return parcol - 1
+      " This is underindenting according to flake8.  changed from parcol -1
+      return parcol
     else
       return parcol
     endif
