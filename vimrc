@@ -232,7 +232,7 @@ map <Leader>k <Plug>(easymotion-k)
 """""""""""""""""""""""""""""""""""""""
 " autocmd BufWritePost *.py call Flake8()
 let g:flake8_show_in_gutter=1
-autocmd FileType python map <buffer> <F3> :call Flake8()<CR>
+autocmd FileType python map <buffer> <F8> :call Flake8()<CR>
 
 
 """""""""""""""""""""""""""""""""""""""
