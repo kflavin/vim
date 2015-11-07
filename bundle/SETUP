@@ -1,10 +1,14 @@
+########################
 # COMMAND-T
+########################
 # Once you've verified that you have ruby installed correctly, run the following
 cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
 make
 
+########################
 # SNIPMATE
+########################
 # SNIPMATE has several additional requirements
 % cd ~/.vim/bundle
 % git clone https://github.com/tomtom/tlib_vim.git
@@ -16,5 +20,23 @@ make
 
 
 
+########################
 # TAGBAR
+########################
 Tagbar requires ctags to be configured!
+
+
+########################
+# YCM
+########################
+cd ~/.vim/bundle/YouCompleteMe/
+./install.py # no clang support
+
+# build by hand - change the library and header locations.
+cmake -G "Unix Makefiles" -DPYTHON_LIBRARY=/opt/rh/python27/root/usr/lib64/python2.7/config/libpython2.7.so  -DPYTHON_INCLUDE_DIR=/opt/rh/python27/root/usr/include/python2.7 . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+
+# ...or run like this:
+cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp
+
+# build
+make
