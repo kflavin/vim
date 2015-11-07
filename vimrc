@@ -56,7 +56,6 @@ if 'VIRTUAL_ENV' in os.environ:
   execfile(activate_this, dict(__file__=activate_this))
 EOF
 
-
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
 
@@ -153,15 +152,18 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>op :vsplit ~/.vim/bundle/vim-snippets/snippets/python.snippets<cr>
 nnoremap <leader>oh :vsplit ~/.vim/bundle/vim-snippets/snippets/html.snippets<cr>
 
-" Grep files
-nnoremap <leader>g :silent execute "grep! -IR " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
+" Grep files (commented out due to conflict)
+" nnoremap <leader>g :silent execute "grep! -IR " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
 " Toggle line numbers
 nnoremap <leader>N :setlocal number!<cr>
 
 " operator mappings
 onoremap p i(
-" onoremap b /return<cr>
+" Fill in the last character
+inoremap ( ()<Esc>:let leavechar=")"<CR>i
+inoremap [ []<Esc>:let leavechar="]"<CR>i
+inoremap { {}<Esc>:let leavechar="}"<CR>i
 
 augroup filetype_python
     autocmd!
@@ -246,3 +248,24 @@ autocmd FileType python map <buffer> <F8> :call Flake8()<CR>
 """""""""""""""""""""""""""""""""""""""
 let g:ycm_autoclose_preview_window_after_completion=1
 map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+map <leader>d  :YcmCompleter GetDoc<CR>
+" Other possible calls:
+" GoToDefinition
+" GoToDeclaration
+" GoTo
+" GetDoc
+
+
+
+function! SaveVimrc()
+    " Get the bytecode.
+    echom @%
+    echom "Hello world"
+    echo expand('%:p')
+    !ls
+
+    " Open a new split and set it up.
+
+    " Insert the bytecode.
+
+endfunction
