@@ -47,6 +47,8 @@ au BufNewFile,BufRead *.py
     \ encoding=utf-8
 
 let python_highlight_all=1
+set t_Co=256
+colorscheme zenburn
 
 "python with virtualenv support
 py << EOF
