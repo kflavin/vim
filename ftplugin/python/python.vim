@@ -9,9 +9,10 @@ setlocal expandtab
 setlocal autoindent
 setlocal fileformat=unix
 setlocal encoding=utf-8
-setlocal t_Co=256               " 256 Colors required for zenburn
-colorscheme zenburn             " Color theme
-let b:python_highlight_all=1    " Highlight all Python syntax
+setlocal t_Co=256                "  256 Colors required for zenburn
+let g:zenburn_high_Contrast=1    " Highlight all Python syntax
+let g:zenburn_alternate_Visual=1 " I like the higher contrast bg
+colorscheme zenburn              " Color theme
 
 "python with virtualenv support
 py << EOF
