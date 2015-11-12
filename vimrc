@@ -2,22 +2,15 @@ set nocompatible
 
 execute pathogen#infect()
 
-" allows incsearch highlighting for range commands
-" cnoremap $t <CR>:t''<CR>
-" cnoremap $T <CR>:T''<CR>
-" cnoremap $m <CR>:m''<CR>
-" cnoremap $M <CR>:M''<CR>
-" cnoremap $d <CR>:d<CR>``
-
-" flake8 config
-" let g:flake8_ignore="E501,W293"
-
 syntax on
 filetype plugin on
 "source ~/.vim/plugin/matchit.vim
 
+let mapleader=','
 
+" ---------------------------------
 " Global settings
+" ---------------------------------
 set expandtab
 set shiftwidth=4
 set softtabstop=4
@@ -30,76 +23,22 @@ set splitbelow
 set splitright
 set incsearch hlsearch
 set autoindent
+set backspace=indent,eol,start
+set nostartofline     " keep cursor in same column for long-range motion cmds
+set incsearch        " Highlight pattern matches as you type
+set ignorecase       " ignore case when using a search pattern
+set smartcase        " override 'ignorecase' when pattern
+                      " has upper case character
+
+" Mouse seems to interfere with other things, pasting
 "if has('mouse')
   "set mouse=a
 "endif
-set backspace=indent,eol,start
 
-" Python Specific
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ textwidth=79
-    \ expandtab
-    \ autoindent
-    \ fileformat=unix
-    \ encoding=utf-8
+" Quick Paste
+nnoremap <leader>p :r! cat<cr>
 
-let python_highlight_all=1
-set t_Co=256
-colorscheme zenburn
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
-
-" Only do this part when compiled with support for autocommands.
-if has("autocmd")
-
-  " Enable file type detection.
-  " Use the default filetype settings, so that mail gets 'tw' set to 72,
-  " 'cindent' is on in C files, etc.
-  " Also load indent files, to automatically do language-dependent indenting.
-  filetype plugin indent on
-
-  " Put these in an autocmd group, so that we can delete them easily.
-  augroup vimrcEx
-  au!
-
-  " For all text files set 'textwidth' to 78 characters.
-  autocmd FileType text setlocal textwidth=78
-
-  " When editing a file, always jump to the last known cursor position.  Don't
-  " do it when the position is invalid or when inside an event handler
-  " (happens when dropping a file on gvim).
-  " Also don't do it when the mark is in the first line, that is the default
-  " position when opening a file.
-  autocmd BufReadPost *
-    \ if line("'\"") > 1 && line("'\"") <= line("$") |
-    \   exe "normal! g`\"" |
-    \ endif
-
-  augroup END
-
-else
-
-  set autoindent                " always set autoindenting on
-
-endif " has("autocmd")
-
-let mapleader=','
-"nmap ZX <ESC>:w<CR>
-"nnoremap <space> dd
-"nnoremap <leader>d dd
 "nnoremap <leader><leader> <C-^>
-"
 nnoremap <leader>q @@
 
 " Change vsplit and split to open new buffers
@@ -232,7 +171,7 @@ nmap s <Plug>(easymotion-s)
 nmap s <Plug>(easymotion-s2)
 
 " Turn on case insensitive feature
-let g:EasyMotion_smartcase = 1 
+let g:EasyMotion_smartcase = 1
 
 " JK motions: Line motions
 map <Leader>j <Plug>(easymotion-j)
@@ -273,3 +212,4 @@ function! SaveVimrc()
     " Insert the bytecode.
 
 endfunction
+
