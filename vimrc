@@ -4,6 +4,7 @@ execute pathogen#infect()
 
 syntax on
 filetype plugin on
+filetype plugin indent on
 "source ~/.vim/plugin/matchit.vim
 
 let mapleader=','
@@ -24,11 +25,10 @@ set splitright
 set incsearch hlsearch
 set autoindent
 set backspace=indent,eol,start
-set nostartofline     " keep cursor in same column for long-range motion cmds
+set nostartofline    " keep cursor in same column for long-range motion cmds
 set incsearch        " Highlight pattern matches as you type
 set ignorecase       " ignore case when using a search pattern
-set smartcase        " override 'ignorecase' when pattern
-                      " has upper case character
+set smartcase        " override 'ignorecase' when there's an uppercase char
 
 " Mouse seems to interfere with other things, pasting
 "if has('mouse')

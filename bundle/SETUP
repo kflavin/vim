@@ -2,9 +2,11 @@
 # COMMAND-T
 ########################
 # Once you've verified that you have ruby installed correctly, run the following
+# You may need to install rvm, and then rvm list, rvm <select matching version>
 cd ~/.vim/bundle/command-t/ruby/command-t
 ruby extconf.rb
 make
+
 
 ########################
 # SNIPMATE
@@ -19,7 +21,6 @@ make
 % git clone https://github.com/honza/vim-snippets.git
 
 
-
 ########################
 # TAGBAR
 ########################
@@ -29,6 +30,7 @@ Tagbar requires ctags to be configured!
 ########################
 # YCM
 ########################
+# This has a number of dependencies which must be installed beforehand
 cd ~/.vim/bundle/YouCompleteMe/
 ./install.py # no clang support
 
