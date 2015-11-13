@@ -63,6 +63,9 @@ noremap <C-t> :tabnew<cr>
 noremap <C-p> :tabprev<cr>
 noremap <C-n> :tabnext<cr>
 
+" Quick sudo write
+cmap w!! w !sudo tee > /dev/null %
+
 " Plugin specific stuff
 noremap <leader>t :CommandTFlush<cr>\|:CommandT<cr>
 noremap <leader>n :NERDTreeToggle<cr>
