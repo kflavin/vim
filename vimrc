@@ -93,9 +93,12 @@ snoremap ;j <esc>
 inoremap <esc> <nop>
 
 " Surround stuff in quotes
-vnoremap <Leader>""" <esc>`>a<cr>"""<esc>`<wi"""<cr><esc>
+vnoremap <Leader>""" <esc>`>a<cr>"""<esc>`<^i"""<cr><esc>
 vnoremap <Leader>" <esc>`>a"<esc>`<i"<esc>
 vnoremap <Leader>' <esc>`>a'<esc>`<i'<esc>
+
+" Delete stuff in quotes
+nnoremap <Leader><Leader>""" :/"""<cr>:.g/"""/d<cr>N:.g/"""/d<cr>
 
 
 " Quickly open files for viewing
