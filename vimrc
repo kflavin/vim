@@ -92,6 +92,11 @@ snoremap ;j <esc>
 " remap esc to no op
 inoremap <esc> <nop>
 
+" Surround stuff in quotes
+vnoremap <Leader>""" <esc>`>a<cr>"""<esc>`<wi"""<cr><esc>
+vnoremap <Leader>" <esc>`>a"<esc>`<i"<esc>
+vnoremap <Leader>' <esc>`>a'<esc>`<i'<esc>
+
 
 " Quickly open files for viewing
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
