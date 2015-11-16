@@ -37,6 +37,7 @@ set smartcase        " override 'ignorecase' when there's an uppercase char
 
 " Quick Paste
 nnoremap <leader>p :r! cat<cr>
+nnoremap <F12> :set invpaste<cr>
 
 "nnoremap <leader><leader> <C-^>
 nnoremap <leader>q @@
