@@ -67,13 +67,22 @@ noremap <C-n> :tabnext<cr>
 " Quick sudo write
 cmap w!! w !sudo tee > /dev/null %
 
+
+"""""""""""""""""""""""""""""""""""""""
+" Command T
+"""""""""""""""""""""""""""""""""""""""
 " Plugin specific stuff
-noremap <leader>t :CommandTFlush<cr>\|:CommandT<cr>
-noremap <leader>n :NERDTreeToggle<cr>
+" noremap <leader>t :CommandTFlush<cr>\|:CommandT<cr>
+" noremap <leader>n :NERDTreeToggle<cr>
 
 "map <leader>gt :CommandTFlush<cr>\|:CommandT functional_tests/<cr>
 "map <leader>gr :CommandTFlush<cr>\|:CommandT tdd/<cr>
 "cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
+"""""""""""""""""""""""""""""""""""""""
+" CTRL P (replacing Command T)
+"""""""""""""""""""""""""""""""""""""""
+let g:ctrlp_cmd = '<leader>t'
 
 "map <leader>e :edit %%
 "map <leader>v :view %%
