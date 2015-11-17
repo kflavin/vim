@@ -14,14 +14,7 @@ git submodule update --init --recursive
 /usr/bin/rsync -avr --exclude '.git/' . ~/.vim
 /usr/bin/rsync vimrc ~/.vimrc
 
-# Attempt to build Command-t and YCM
-#  Either of these may fail due to external dependencies.
-#  See the SETUP file under bundle/
-
-# Make Command-t
-cd ~/.vim/bundle/command-t/ruby/command-t
-ruby extconf.rb
-make
+# Attempt to build YCM
 
 # Make YCM
 cd ~/.vim/bundle/YouCompleteMe/

@@ -1,5 +1,5 @@
 ########################
-# COMMAND-T
+# COMMAND-T ** replacing with CTRLP **
 ########################
 # Once you've verified that you have ruby installed correctly, run the following
 # You may need to install rvm, and then rvm list, rvm <select matching version>
