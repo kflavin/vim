@@ -23,21 +23,6 @@ cd vim
 ./setup.sh
 ```
 
-Note Command-T (replaced, but still included under bundle/) requires ruby support. Verify it's compiled in:
-```bash
-vim --version | grep ruby
-```
-
-...then run:
-```bash
-cd ~/.vim/bundle/command-t/ruby/command-t
-ruby extconf.rb
-make
-```
-
-In order to use Command-T, uncomment the <leader>t mapping in .vimrc.  Note that CTRL-P is using that mapping currently.
-
-
 YCM needs to be built.  It requires clang and some other dependencies to be installed.
 ```bash
 cd ~/.vim/bundle/YouCompleteMe/

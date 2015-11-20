@@ -73,7 +73,6 @@ cmap w!! w !sudo tee > /dev/null %
 """""""""""""""""""""""""""""""""""""""
 " Plugin specific stuff
 " noremap <leader>t :CommandTFlush<cr>\|:CommandT<cr>
-" noremap <leader>n :NERDTreeToggle<cr>
 
 "map <leader>gt :CommandTFlush<cr>\|:CommandT functional_tests/<cr>
 "map <leader>gr :CommandTFlush<cr>\|:CommandT tdd/<cr>
@@ -82,7 +81,8 @@ cmap w!! w !sudo tee > /dev/null %
 """""""""""""""""""""""""""""""""""""""
 " CTRL P (replacing Command T)
 """""""""""""""""""""""""""""""""""""""
-let g:ctrlp_cmd = '<leader>t'
+let g:ctrlp_map = '<leader>t'
+let g:ctrlp_cmd = 'CtrlP'
 
 "map <leader>e :edit %%
 "map <leader>v :view %%
@@ -146,6 +146,8 @@ augroup END
 """""""""""""""""""""""""""""""""""""""
 " NERDTREE
 """""""""""""""""""""""""""""""""""""""
+noremap <leader>n :NERDTreeToggle<cr>
+
 " NERDTress File highlighting
  function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
