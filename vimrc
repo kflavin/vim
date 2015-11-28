@@ -134,6 +134,8 @@ augroup filetype_python
     autocmd FileType python nnoremap <buffer> <localleader>c I#<esc>
 augroup END
 
+" autocmd BufRead,BufNewFile *.html let g:loaded_youcompleteme = 0
+" let g:loaded_youcompleteme = 0
 
 " Vimscript file settings ---------------------- {{{
 augroup filetype_vim
@@ -220,6 +222,12 @@ map <leader>d  :YcmCompleter GetDoc<CR>
 " GoToDeclaration
 " GoTo
 " GetDoc
+
+" Turn off YCM if we're working with HTML files
+if  (expand('%:e') ==? 'html')
+    let g:loaded_youcompleteme = 1
+endif
+
 
 
 
