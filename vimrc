@@ -92,6 +92,8 @@ let g:ctrlp_cmd = 'CtrlP'
 "map <leader>v :view %%
 
 " trying out some new mappings
+vnoremap " <esc>`>a"<esc> `<i"<esc>
+vnoremap ' <esc>`>a'<esc> `<i'<esc>
 noremap <space> viw
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
