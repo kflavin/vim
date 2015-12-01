@@ -126,10 +126,6 @@ nnoremap <leader>N :setlocal number!<cr>
 
 " operator mappings
 onoremap p i(
-" Fill in the last character
-inoremap ( ()<Esc>:let leavechar=")"<CR>i
-inoremap [ []<Esc>:let leavechar="]"<CR>i
-inoremap { {}<Esc>:let leavechar="}"<CR>i
 
 augroup filetype_python
     autocmd!
@@ -246,3 +242,4 @@ function! SaveVimrc()
 
 endfunction
 
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
