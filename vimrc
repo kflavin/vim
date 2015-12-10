@@ -37,7 +37,7 @@ set smartcase        " override 'ignorecase' when there's an uppercase char
 
 " Quick Paste
 nnoremap <leader>p :r! cat<cr>
-nnoremap <F12> :set invpaste<cr>
+nnoremap <F2> :set invpaste<cr>
 
 "nnoremap <leader><leader> <C-^>
 nnoremap <leader>q @@
@@ -222,12 +222,17 @@ map <leader>d  :YcmCompleter GetDoc<CR>
 " GetDoc
 
 " Turn off YCM if we're working with HTML files
-if  (expand('%:e') ==? 'html')
-    let g:loaded_youcompleteme = 1
-endif
 
+" This wasn't working for me...
+" let g:ycm_filetype_blacklist = { 'html': 1 }
 
-
+" Workaround because I couldn't get the whitelist/blacklist to work
+let g:ycm_filetype_disable = ['css', 'html']
+for i in g:ycm_filetype_disable
+    if (expand('%:e') ==? i)
+        let g:loaded_youcompleteme=1
+    endif
+endfor
 
 function! SaveVimrc()
     " Get the bytecode.
