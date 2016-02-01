@@ -18,4 +18,4 @@ git submodule update --init --recursive
 
 # Make YCM
 cd ~/.vim/bundle/YouCompleteMe/
-./install.py # no clang support
+python ./install.py # no clang support
