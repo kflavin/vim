@@ -1,7 +1,7 @@
 set shiftwidth=2
 set softtabstop=2
 
-function Fixtabs()
+function! Fixtabs()
     " Retab HTML to use 2 spaces instead of 4.
     set noexpandtab
     set tabstop=4
