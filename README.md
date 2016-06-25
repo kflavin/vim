@@ -28,3 +28,7 @@ YCM needs to be built.  It requires clang and some other dependencies to be inst
 cd ~/.vim/bundle/YouCompleteMe/
 ./install.py # no clang support
 ```
+
+For Ubunt 16.04:
+sudo apt-get install vim-gnome-py2
+sudo update-alternatives --set vim /usr/bin/vim.gnome-py2
