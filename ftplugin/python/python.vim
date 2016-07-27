@@ -4,7 +4,7 @@
 setlocal tabstop=4
 setlocal softtabstop=4
 setlocal shiftwidth=4
-"setlocal textwidth=79
+setlocal textwidth=79
 setlocal expandtab
 setlocal autoindent
 setlocal fileformat=unix
@@ -28,3 +28,9 @@ EOF
 inoremap ( ()<Esc>:let leavechar=")"<CR>i
 inoremap [ []<Esc>:let leavechar="]"<CR>i
 inoremap { {}<Esc>:let leavechar="}"<CR>i
+
+" Surround stuff in quotes
+vnoremap <Leader>""" <esc>`>a<cr>"""<esc>`<^i"""<cr><esc>
+
+" Delete stuff in quotes
+nnoremap <Leader><Leader>""" :/"""<cr>:.g/"""/d<cr>N:.g/"""/d<cr>
