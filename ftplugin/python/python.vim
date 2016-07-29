@@ -9,6 +9,9 @@ setlocal expandtab
 setlocal autoindent
 setlocal fileformat=unix
 setlocal encoding=utf-8
+setlocal foldmethod=indent
+setlocal foldnestmax=2
+setlocal foldlevelstart=20
 setlocal t_Co=256                "  256 Colors required for zenburn
 let g:zenburn_high_Contrast=1    " Highlight all Python syntax
 let g:zenburn_alternate_Visual=1 " I like the higher contrast bg
