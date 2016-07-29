@@ -40,4 +40,6 @@ zM - close all folds
 zm - fold by level
 zR - open all folds
 zr - open level by level
-
+zo - open at cursor
+zO - open all levels at cursor
+zc - close at cursor
