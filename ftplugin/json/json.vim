@@ -4,3 +4,5 @@ com! FormatJSON %!python -c "from collections import OrderedDict; import sys; im
 " Turn off concealment of quotes
 let g:vim_json_syntax_conceal = 0
 
+setlocal foldmethod=syntax
+set foldlevel=99
