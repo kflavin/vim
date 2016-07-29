@@ -29,6 +29,15 @@ cd ~/.vim/bundle/YouCompleteMe/
 ./install.py # no clang support
 ```
 
-For Ubunt 16.04:
+For Ubuntu 16.04:
 sudo apt-get install vim-gnome-py2
 sudo update-alternatives --set vim /usr/bin/vim.gnome-py2
+
+
+
+Code Folding
+zM - close all folds
+zm - fold by level
+zR - open all folds
+zr - open level by level
+
