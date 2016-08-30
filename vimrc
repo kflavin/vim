@@ -30,10 +30,12 @@ set incsearch        " Highlight pattern matches as you type
 set ignorecase       " ignore case when using a search pattern
 set smartcase        " override 'ignorecase' when there's an uppercase char
 
-" Mouse seems to interfere with other things, pasting
-"if has('mouse')
-  "set mouse=a
-"endif
+" Mouse seems to interfere with other things, may need to disable
+if has('mouse')
+  set mouse=nvi
+  set ttyfast
+  " set mouse=a
+endif
 
 " Quick Paste
 nnoremap <leader>p :r! cat<cr>
@@ -104,8 +106,13 @@ snoremap ;j <esc>
 inoremap <esc> <nop>
 
 " Surround stuff in quotes
+vnoremap <Leader>""" <esc>`>a<cr>"""<esc>`<^i"""<cr><esc>
 vnoremap <Leader>" <esc>`>a"<esc>`<i"<esc>
 vnoremap <Leader>' <esc>`>a'<esc>`<i'<esc>
+
+" Delete stuff in quotes
+nnoremap <Leader><Leader>""" :/"""<cr>:.g/"""/d<cr>N:.g/"""/d<cr>
+
 
 " Quickly open files for viewing
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
