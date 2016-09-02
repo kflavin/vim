@@ -30,7 +30,7 @@ set incsearch        " Highlight pattern matches as you type
 set ignorecase       " ignore case when using a search pattern
 set smartcase        " override 'ignorecase' when there's an uppercase char
 
-" Mouse seems to interfere with other things, may need to disable
+" Use 'shift' when copying or pasting from a source external to vim
 if has('mouse')
   set mouse=nvi
   set ttyfast
