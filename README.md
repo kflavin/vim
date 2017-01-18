@@ -39,8 +39,9 @@ sudo apt-get install python-dev
 ```
 
 
+## Vim Hotkeys
 
-## Code Folding
+#### Code Folding
 zM - close all folds
 
 zm - fold by level
@@ -54,3 +55,6 @@ zo - open at cursor
 zO - open all levels at cursor
 
 zc - close at cursor
+
+#### Misc
+Count highlighted visual lines - Highlight with "V", then c C-g
