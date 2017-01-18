@@ -23,7 +23,7 @@ cd vim
 ./setup.sh
 ```
 
-### YCM needs to be built.  It requires clang and some other dependencies to be installed.
+### Build YCM (handled by setup.sh script)
 ```bash
 cd ~/.vim/bundle/YouCompleteMe/
 ./install.py # no clang support
