@@ -38,6 +38,19 @@ Ensure python-dev packages are installed
 sudo apt-get install python-dev
 ```
 
+### Enable tern for javascript and jquery
+- install node and npm
+- Add jquery (an any other libraries) to your project
+- Add the tern-project file to your project, and set it to jquery
+- Run YCM install.py with --tern-complete (see setup.sh)
+- You can optionally add other libraries as follows:
+```json
+  "loadEagerly": [
+    "/home/user/project/js/**/*.js"
+  ]
+```
+
+
 
 ## Vim Hotkeys
 

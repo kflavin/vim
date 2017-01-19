@@ -1,0 +1,14 @@
+{
+  "libs": [
+    ],
+  "loadEagerly": [
+      "./jquery-3.1.1.min.js"
+    ],
+
+  "plugins": {
+      "requirejs": {
+            "baseURL": "./",
+            "paths": {}
+          }
+    }
+}
