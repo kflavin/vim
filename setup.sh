@@ -19,4 +19,4 @@ git submodule update --init --recursive
 # Make YCM
 # Ensure python-dev packages are installed
 cd ~/.vim/bundle/YouCompleteMe/
-python ./install.py # no clang support
+python ./install.py --tern-completer # no clang support
