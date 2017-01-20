@@ -70,4 +70,7 @@ zO - open all levels at cursor
 zc - close at cursor
 
 #### Misc
+
+##### Counting
 Count highlighted visual lines - Highlight with "V", then c C-g
+Count number of search occurrences - :%s/pattern//gn (omit 'g' to count lines)
